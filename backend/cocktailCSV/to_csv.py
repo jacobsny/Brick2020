@@ -15,7 +15,7 @@ def get_drinks():
 
 
 def to_csv(all_drinks):
-    with open("cocktails.csv", "w", newline='') as cocktails:
+    with open("/home/jacobsny/PycharmProjects/Brick2020/data/cocktails.csv", "w", newline='') as cocktails:
         writer = csv.writer(cocktails, delimiter=',')
         writer.writerow(['Name', "Category", "Glass"] + ["Ingredient" + str(i) for i in range(1, 16)] + ["Directions", "isAlcoholic", "Video"])
         for drink in all_drinks:
