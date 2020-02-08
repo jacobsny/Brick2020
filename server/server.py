@@ -1,7 +1,9 @@
-from flask import Flask, request
+from flask import Flask, request, render_template
 import json
 import threading
 import time
+
+from backend.searchAPI import valid_search, search_results
 
 app = Flask(__name__)
 
