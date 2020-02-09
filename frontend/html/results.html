@@ -17,7 +17,11 @@
   function handleSearch(json) {
     if ("invalid" in json){
       document.getElementById("resultsname1").innerHTML = "Invalid Search: Could not find " + json['invalid'];
-      document.getElementByClassName("column").style = "border-style: none;"
+      document.getElementById("resultsname1").style = "text-align: center;";
+      for (i = 0; i < 15; i++){
+        document.getElementById("resultsimg" + i).remove();
+      }
+      document.getElementsByClassName("column").style = "border-style: none;";
       return;
     }
     console.log(json);
@@ -179,4 +183,3 @@
   </div>
 </body>
 </html>
-
