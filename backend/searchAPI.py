@@ -53,12 +53,16 @@ def search_results(keywords):
     for product in products:
         for keyword in keyList:
             if keyword in product["Varietal"].lower() or keyword in product["DigitalCatalogProductName"].lower().split():
-                productsFound.append(product)
+                id_drop_prod = product
+                del(id_drop_prod["_id"])
+                productsFound.append(id_drop_prod)
                 break
     for cocktail in cocktails:
         for keyword in keyList:
             if keyword in cocktail["Name"].lower() or keyword in cocktail["Ingredient1"].lower():
-                cocktailsFound.append(cocktail)
+                id_drop_ctail = cocktail
+                del(id_drop_ctail["_id"])
+                cocktailsFound.append(id_drop_ctail)
                 break
     return {"products": productsFound, "cocktails": cocktailsFound}
     # dict = {"products": ["hey this works"]}
