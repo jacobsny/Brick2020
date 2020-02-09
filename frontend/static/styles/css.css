@@ -99,8 +99,9 @@
   padding-top: 15px;
   padding-left: 15px;
   padding-right: 15px;
-  width: 100%;
-  height: auto;
+  width: 200px;
+  height: 200px;
+  object-fit: contain;
 }
 
 .name {
