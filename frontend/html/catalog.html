@@ -43,6 +43,24 @@
       document.getElementById(price).innerHTML = products[i]["price"];
       document.getElementById(desc).innerHTML = products[i]["ProductDescShort"];
     }
+    for (i= 15; i < 40; i++){
+      imag = "resultsimg" + i;
+      name = "resultsname" + i;
+      price = "resultsprice" + i;
+      desc = "resultsdesc" + i;
+      document.getElementsByClassName("columncontainer")[0].innerHTML += "<div class=\"column\">\n" +
+              "      <div class=\"box\">\n" +
+              "        <img id=\"resultsimg" + i + "\" class=\"image\" src=\"\">\n" +
+              "        <p id=\"resultsname" + i +"\" class=\"name\"></p>\n" +
+              "        <p id=\"resultsprice0" + i +"\" class=\"desc\"></p>\n" +
+              "        <p id=\"resultsdesc0" + i + "\" class=\"desc\"></p>\n" +
+              "      </div>\n" +
+              "    </div>"
+      document.getElementById(imag).src = products[i]["Image_bottle_standard"];
+      document.getElementById(name).innerHTML = products[i]["DigitalCatalogProductName"];
+      document.getElementById(price).innerHTML = products[i]["price"];
+      document.getElementById(desc).innerHTML = products[i]["ProductDescShort"];
+    }
   }
 
   $(document).ready(function(){
