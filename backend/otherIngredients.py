@@ -1,4 +1,3 @@
-import csv, json
 import backend.wegmans as weg
 
 def getIngredients(cocktailList):
@@ -29,5 +28,12 @@ def getIngredientsPrices(ingredients):
 
             ingredientsWithPrices[name] = price
 
-
     return ingredientsWithPrices
+
+def pricePerServing(dicOfIngredients):
+    price = 0
+
+    for value in dic.keys():
+        price += value
+
+    return price
