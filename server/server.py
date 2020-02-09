@@ -40,13 +40,13 @@ def serve_search():
 def searching():
     error = None
     if request.method == 'POST':
-        print("isPost")
+        # print("isPost")
         keywords = request.form["keywords"]
         if valid_search(keywords):
-            print(keywords + "-- valid")
+            # print(keywords + "-- valid")
             # TODO choose search results return type
             result = search_results(keywords)
-            print(result)
+            # print(result)
             return jsonify(result)
         else:
             error = 'Invalid search'

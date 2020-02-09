@@ -54,10 +54,8 @@ def search_results(keywords):
             if keyword in cocktail["Name"].lower() or keyword in cocktail["Ingredient1"].lower():
                 cocktailsFound.append(cocktail)
                 break
-    # return json.dumps({"products": productsFound, "cocktails": cocktailsFound})
-    dict = {"products": ["hey this works"]}
-    print(dict)
-    return json.dumps(dict)
+    return str({"products": productsFound, "cocktails": cocktailsFound})
+    # dict = {"products": ["hey this works"]}
     # print(productsFound)
     # print(cocktailsFound)
 
