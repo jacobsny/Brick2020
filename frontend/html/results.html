@@ -25,10 +25,10 @@
       name = "resultsname" + i;
       price = "resultsprice" + i;
       desc = "resultsdesc" + i;
-      document.getElementById(imag).src = returnJson[i].Image_bottle_standard;
-      document.getElementById(name).innerHTML = returnJson[i].DigitalCatalogProductName;
-      document.getElementById(price).innerHTML = returnJson[i].price;
-      document.getElementById(desc).innerHTML = returnJson[i].ProductDescShort;
+      document.getElementById(imag).src = json[i].Image_bottle_standard;
+      document.getElementById(name).innerHTML = json[i].DigitalCatalogProductName;
+      document.getElementById(price).innerHTML = json[i].price;
+      document.getElementById(desc).innerHTML = json[i].ProductDescShort;
     }
   }
 
