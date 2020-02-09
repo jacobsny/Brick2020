@@ -1,6 +1,6 @@
 function post(endpt, args, takesArgs) {
   const http = new XMLHttpRequest();
-  const url= "134.209.169.26/" + endpt;
+  const url= endpt;
   if(takesArgs){
     const data = new FormData();
     for(let k in args){
