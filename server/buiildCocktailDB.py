@@ -12,11 +12,9 @@ with open("/home/jacobsny/PycharmProjects/Brick2020/data/cocktails.csv") as cock
     csv_reader = csv.reader(cocktails)
     count = 0
     header = []
-    counter = 0
     for row in csv_reader:
         if count == 0:
             header = row
-            # print(header)
         else:
             cock = {}
             for i in range(0, len(header)):
@@ -33,7 +31,6 @@ with open("/home/jacobsny/PycharmProjects/Brick2020/data/cocktails.csv") as cock
                         if booze.lower() in item.lower():
                             constBrand = True
             if constBrand:
-                counter += 1
                 db.cocktails.insert_one(cock)
         count += 1
 cursor = db.cocktails.find({})
