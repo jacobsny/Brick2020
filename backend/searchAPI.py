@@ -23,7 +23,9 @@ def valid_search(keywords):
             for type in next(reader):
                 if type.lower() in keywords.lower():
                     return True
-    # Check cocktails
+    for word in list_cocktails().split():
+        if word.lower() in keywords.lower():
+            return True
     return False
     # Is search valid in constellations and cocktailDB?
     # returns a boolean if valid
@@ -33,4 +35,4 @@ def search_results(keywords, servings):
 
 
 if __name__ == '__main__':
-    print(valid_search("jeff"))
+    print(valid_search("beer"))
