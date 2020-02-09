@@ -99,8 +99,8 @@
   padding-top: 15px;
   padding-left: 15px;
   padding-right: 15px;
-  width: 65%;
-  height: 65%;
+  width: 28%;
+  height: 20%;
 }
 
 .name {
@@ -119,7 +119,7 @@
   text-align: left;
 }
 
-@media screen and (max-width: 450px) {
+@media screen and (max-width: 500px) {
   .column {
     width: 100%;
   }
