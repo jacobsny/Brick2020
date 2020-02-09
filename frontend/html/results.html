@@ -17,6 +17,7 @@
   function handleSearch(json) {
     if ("invalid" in json){
       document.getElementById("columncontainer").innerHTML = "Invalid Search: Could not find " + json['invalid'];
+      document.getElementByClassName("column").style = "border-style: none;"
       return;
     }
     console.log(json);
