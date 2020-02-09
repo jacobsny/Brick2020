@@ -25,12 +25,9 @@ def get_random():
 
 
 def valid_search(keywords):
-    with open("data/filtered.csv") as types:
-        reader = csv.reader(types)
-        for i in range(0,3):
-            for type in next(reader):
-                if type.lower() in keywords.lower():
-                    return True
+    for type in db.weggies.distinct("varietal"):
+        if type.lower() in keywords.lower():
+            return True
     for cocktail in list_cocktails():
         for word in keywords.split():
             if word.lower() in cocktail.lower() and word.lower() != "and" and word.lower() != "the":
@@ -97,5 +94,6 @@ def get_stats_cocktails(name):
 
 
 if __name__ == '__main__':
+    print(valid_search("Corona"))
     print(stats_product("Modelo Especial Mexican Lager Beer, 6 pk 12 fl oz Cans, 4.4% ABV"))
     print(get_stats_product("Modelo Especial Mexican Lager Beer, 6 pk 12 fl oz Cans, 4.4% ABV"))
