@@ -6,11 +6,11 @@ function post(endpt, args, takesArgs, callback) {
     for (let k in args) {
       data.append(k, args[k]);
     }
-    http.open("POST", url, false);
+    http.open("POST", url);
     console.log("sending form")
     http.send(data)
   } else {
-    http.open("POST", url, false);
+    http.open("POST", url);
     http.send();
   }
 
