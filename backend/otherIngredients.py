@@ -3,7 +3,7 @@ import backend.wegmans as weg
 
 # Given a cocktail from cocktails.csv it will return a list of ingredients
 def getIngredients(cocktailList):
-    target = cocktailList[4:]
+    target = cocktailList[3:]
 
     ingredients = []
 
@@ -30,6 +30,8 @@ def getIngredientsPrices(ingredients):
             price = weg.getAvgPriceBySku(sku)
 
             ingredientsWithPrices[name] = price
+        else:
+            ingredientsWithPrices[name] = 0.00
 
     return ingredientsWithPrices
 

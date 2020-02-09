@@ -1,4 +1,8 @@
 from flask import Flask, request, render_template, jsonify
+import backend.wegmans as weg
+
+import backend.otherIngredients as ingred
+
 from pymongo import MongoClient
 import json
 import threading
@@ -87,7 +91,13 @@ def get_stats():
 
 @app.route('/random')
 def random():
-    return jsonify(get_random())
+    cocktail = get_random()
+
+    ingredientPrices = ingred.ingredientPrices(cocktail)
+
+
+
+    return jsonify(ingredientPrices)
 
 
 if __name__ == '__main__':
