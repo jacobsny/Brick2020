@@ -1,7 +1,6 @@
 import requests
 import json
-import csv
-import datetime
+import csv, datetime, random
 
 from pymongo import MongoClient
 
@@ -15,7 +14,15 @@ def list_cocktails():
     return data
 
 def get_random():
-    return {}
+
+    with open("../data/cocktails.csv") as f:
+        next(f)
+
+        for num, f in enumerate(f, 2):
+            if random.randrange(num): continue
+            line = f
+        return line
+
 
 def valid_search(keywords):
     with open("../data/filtered.csv") as types:
