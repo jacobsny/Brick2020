@@ -23,3 +23,21 @@ function post(endpt, args, takesArgs, callback) {
 
   }
 }
+
+function get(endpt, callback) {
+  const http = new XMLHttpRequest();
+  const url = endpt;
+
+  http.open("GET", url);
+  http.send();
+
+  http.onreadystatechange = function() {
+    if (http.readyState === 4 && http.status === 200) {
+      var response = http.responseText;
+      console.log(response);
+      var json = JSON.parse(http.response);
+      callback(json);
+    }
+
+  }
+}

@@ -11,7 +11,7 @@
       console.log("Page created on Feb 8, 2020");
       var serv = getUrlVars()["serv"];
       var squery = getUrlVars()["squery"];
-      var returnJson = post("searching", {"keywords": squery}, true, handleSearch);
+      var returnJson = get("catalog", handleSearch);
   }
 
   function handleSearch(json) {
