@@ -1,5 +1,7 @@
 import backend.wegmans as weg
 
+
+# Given a cocktail from cocktails.csv it will return a list of ingredients
 def getIngredients(cocktailList):
     target = cocktailList[4:]
 
@@ -11,6 +13,7 @@ def getIngredients(cocktailList):
 
     return ingredients
 
+# Given a list of ingredients it will return a dictionary with the ingredients mapping the prices using the Wegmans API
 def getIngredientsPrices(ingredients):
 
     ingredientsWithPrices = {}
@@ -30,7 +33,8 @@ def getIngredientsPrices(ingredients):
 
     return ingredientsWithPrices
 
-def pricePerServing(dicOfIngredients):
+# Given a dictionary of ingredients mapped to price it will return the total price of all the other ingredients
+def pricePerServing(dic):
     price = 0
 
     for value in dic.keys():
