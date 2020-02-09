@@ -10,18 +10,16 @@
 
 	function onLoad(){
     	console.log("Page created on Feb 8, 2020");
-      var name = getUrlVars()["name"];
-      name.replace(/%20/g, " ");
-      var direction = getUrlVars()["d"];
-      document.getElementById("resultsname").innerHTML = name;
-      for (i = 0; i < 15; i++){
-        var ingredient = getUrlVars()["i" + (i+1)];
-        ingredient.replace(/%20/g, " ");
-        document.getElementById("resultsingr" + i).innerHTML = ingredient;
-        ingredient_list += ingredient;
+    	post("get_cocktail", {"Name": getUrlVars()["name"]}, true, makePage);
+  }
+
+  function makePage(json) {
+	  document.getElementById("resultsname").innerText += json["Name"];
+	  for(i in json["Ingredients"]){
+	    document.getElementById("resultsingr0").innerHTML += i + "<br>"
+        ingredient_list += i;
       }
-      direction.replace(/%20/g, " ");
-      document.getElementById("resultsins").innerHTML = direction;
+	  document.getElementById("dir").innerText = json["Directions"]
   }
 
   function getUrlVars() {
@@ -50,21 +48,7 @@
         <p id="resultsname" class="name">Name: </p><br>
         <p>Ingredients:</p>
         <p id="resultsingr0" class="desc"></p>
-        <p id="resultsingr1" class="desc"></p>
-        <p id="resultsingr2" class="desc"></p>
-        <p id="resultsingr3" class="desc"></p>
-        <p id="resultsingr4" class="desc"></p>
-        <p id="resultsingr5" class="desc"></p>
-        <p id="resultsingr6" class="desc"></p>
-        <p id="resultsingr7" class="desc"></p>
-        <p id="resultsingr8" class="desc"></p>
-        <p id="resultsingr9" class="desc"></p>
-        <p id="resultsingr10" class="desc"></p>
-        <p id="resultsingr11" class="desc"></p>
-        <p id="resultsingr12" class="desc"></p>
-        <p id="resultsingr13" class="desc"></p>
-        <p id="resultsingr14" class="desc"></p><br>
-        <p id="resultsins" class="desc"></p><br>
+        <p id="dir"></p>
         <p class="desc">Want this recipe? Please enter your phone number and provider below.</p>
         <input type="text" id="searchquery" name="searchbox" value="">
         <button onclick="sendtext(ingredient_list,provider,phoneNumber)">Send Text</button>
