@@ -54,8 +54,9 @@ def search_results(keywords):
             if keyword in cocktail["Name"].lower() or keyword in cocktail["Ingredient1"].lower():
                 cocktailsFound.append(cocktail)
                 break
-    print(productsFound)
-    print(cocktailsFound)
+    return str({"products": productsFound, "cocktails": cocktailsFound})
+    # print(productsFound)
+    # print(cocktailsFound)
 
 
 def stats_product(name):
