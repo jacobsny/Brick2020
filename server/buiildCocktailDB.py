@@ -1,7 +1,7 @@
 from pymongo import MongoClient
 import csv
 
-client = MongoClient(port=27017)
+client = MongoClient("mongodb+srv://ccocktail:JacobIsAnAlcoholic@constellationcocktails-iu1cp.mongodb.net/test?retryWrites=true&w=majority")
 db = client.constellation
 
 # descrip = [a["DigitalCatalogProductName"] for a in list(cursor) if a["BeverageSegment"] == "Spirits"]

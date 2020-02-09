@@ -5,7 +5,7 @@ import csv, datetime, random
 from pymongo import MongoClient
 
 url = "https://api.wegmans.io/products/"
-client = MongoClient(port=27017)
+client = MongoClient("mongodb+srv://ccocktail:JacobIsAnAlcoholic@constellationcocktails-iu1cp.mongodb.net/test?retryWrites=true&w=majority")
 db = client.constellation
 
 
