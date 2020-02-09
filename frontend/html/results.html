@@ -47,7 +47,8 @@
     else{
       cocktails = json['cocktails'];
       html = "";
-      for(cocktail in cocktails){
+      for(c in cocktails){
+        cocktail = cocktails[c];
         console.log(cocktail);
         div = "<div class=\"row\"><a href=\"/cocktail?name=" + cocktail["Name"];
         for(i=1; i <= 15; i++){
