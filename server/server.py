@@ -81,9 +81,9 @@ def get_stats():
         type = request.form["type"] # true is product
         name = request.form["name"]
         if(type):
-            get_stats_product(name)
+            return json.dumps(get_stats_product(name))
         else:
-            get_stats_cocktails(name)
+            return json.dumps(get_stats_cocktails(name))
     # the code below is executed if the request method
     # was GET or the credentials were invalid
     return render_template('404.html')
