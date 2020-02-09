@@ -1,6 +1,7 @@
 import requests
 import json
 import csv
+import datetime
 
 from pymongo import MongoClient
 
@@ -55,6 +56,20 @@ def search_results(keywords):
                 break
     print(productsFound)
     print(cocktailsFound)
+
+
+def stats_product(name):
+    # TODO add name into mongoDB if not in yet
+    now = datetime.datetime.now()
+    current = now.strftime("%Y-%m-%d %H:%M:%S")
+    db.stats_product.insert_one({"datetime": current, "Name": name})
+
+
+def stats_cocktails(name):
+    # TODO add name into mongoDB if not in yet
+    now = datetime.datetime.now()
+    current = now.strftime("%Y-%m-%d %H:%M:%S")
+    db.stats_cocktails.insert_one({"datetime": current, "Name": name})
 
 
 if __name__ == '__main__':
