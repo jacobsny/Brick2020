@@ -8,8 +8,6 @@ from backend.searchAPI import valid_search, search_results
 
 app = Flask(__name__)
 
-client = MongoClient(port=27017)
-
 @app.route("/")
 def visual():
     print("Insert HTML HERE")
