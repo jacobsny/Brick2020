@@ -2,7 +2,18 @@ import requests
 import json
 import csv
 
+from pymongo import MongoClient
+
 url = "https://api.wegmans.io/products/"
+client = MongoClient(port=27017)
+db = client.constellation
+
+
+def list_cocktails():
+    data = db.cocktails.distinct("Name")
+    print(data)
+    return data
+
 
 def valid_search(keywords):
     print(keywords)

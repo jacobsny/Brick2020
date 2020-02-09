@@ -4,7 +4,6 @@ import csv
 client = MongoClient(port=27017)
 db = client.constellation
 
-cursor = db.products.find({})
 # descrip = [a["DigitalCatalogProductName"] for a in list(cursor) if a["BeverageSegment"] == "Spirits"]
 boozes = ["Vodka", "Brandy", "Whiskey", "Bourbon", "Tequila", "Brandy", "Rum", "Modelo", "Wine", "Lager", "Beer"]
 #
