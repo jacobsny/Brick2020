@@ -58,6 +58,7 @@
         for(i=1; i <= 15; i++){
           div += "?i" + i + "=" +  cocktail["Ingredient" + i];
         }
+        div += "?d=" + cocktail["Directions"];
         div +="\">";
         div += cocktail["Name"] + "</a> \tCategory: " + cocktail["Category"] + "</div>";
         html += div;
