@@ -72,9 +72,9 @@ def search_results(keywords):
 
 
 def search_all():
-    products = db.products.find({})
-    cocktails = db.cocktails.find({})
-    return {"products": products, "cocktails": cocktails}
+    products = list(db.products.find({}))
+    cocktails = list(db.cocktails.find({}))
+    return {"products": [pro for pro in products], "cocktails": [co for co in cocktails]}
 
 
 def stats_product(name):
@@ -107,3 +107,6 @@ if __name__ == '__main__':
     print(valid_search("Corona"))
     print(stats_product("Modelo Especial Mexican Lager Beer, 6 pk 12 fl oz Cans, 4.4% ABV"))
     print(get_stats_product("Modelo Especial Mexican Lager Beer, 6 pk 12 fl oz Cans, 4.4% ABV"))
+
+    print(search_all())
+
