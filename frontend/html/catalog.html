@@ -12,25 +12,24 @@
       var serv = getUrlVars()["serv"];
       var squery = getUrlVars()["squery"];
       var returnJson = post("searching", {"keywords": squery}, true, handleSearch);
-      var imag = "";
-      var name = "";
-      var price = "";
-      var desc = "";
-
-      for (i = 0; i < 15; i++){
-        imag = "resultsimg" + i;
-        name = "resultsname" + i;
-        price = "resultsprice" + i;
-        desc = "resultsdesc" + i;
-        document.getElementById(imag).src = returnJson[i].Image_bottle_standard;
-        document.getElementById(name).innerHTML = returnJson[i].DigitalCatalogProductName;
-        document.getElementById(price).innerHTML = returnJson[i].price;
-        document.getElementById(desc).innerHTML = returnJson[i].ProductDescShort;
-      }
   }
 
   function handleSearch(json) {
-    console.log(json);
+    var imag = "";
+    var name = "";
+    var price = "";
+    var desc = "";
+
+    for (i = 0; i < 15; i++){
+      imag = "resultsimg" + i;
+      name = "resultsname" + i;
+      price = "resultsprice" + i;
+      desc = "resultsdesc" + i;
+      document.getElementById(imag).src = returnJson[i].Image_bottle_standard;
+      document.getElementById(name).innerHTML = returnJson[i].DigitalCatalogProductName;
+      document.getElementById(price).innerHTML = returnJson[i].price;
+      document.getElementById(desc).innerHTML = returnJson[i].ProductDescShort;
+    }
   }
 
   function getUrlVars() {
