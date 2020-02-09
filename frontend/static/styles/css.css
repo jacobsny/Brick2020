@@ -1,5 +1,9 @@
 /* Welcome CSS */
 
+body {
+  background-image: "../wooden-boards.jpg";
+}
+
 .welcomepage {
   height: 100%;
   width: 100%;
