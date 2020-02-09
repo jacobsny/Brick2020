@@ -55,7 +55,9 @@ def search_results(keywords):
                 cocktailsFound.append(cocktail)
                 break
     # return json.dumps({"products": productsFound, "cocktails": cocktailsFound})
-    return json.dumps({"products": ["hey this works"]})
+    dict = {"products": ["hey this works"]}
+    print(dict)
+    return json.dumps(dict)
     # print(productsFound)
     # print(cocktailsFound)
 

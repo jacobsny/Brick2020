@@ -43,9 +43,11 @@ def searching():
         print("isPost")
         keywords = request.form["keywords"]
         if valid_search(keywords):
-            print("valid")
+            print(keywords + "-- valid")
             # TODO choose search results return type
-            return search_results(keywords)
+            result = search_results(keywords)
+            print(result)
+            return result
         else:
             error = 'Invalid search'
     # the code below is executed if the request method
