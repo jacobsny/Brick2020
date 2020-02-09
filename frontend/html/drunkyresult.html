@@ -11,7 +11,7 @@
       console.log("Page created on Feb 8, 2020");
       var serv = getUrlVars()["serv"];
       var squery = getUrlVars()["squery"];
-      var returnJson = post("searching", {"keywords": squery}, true, handleSearch);
+      var returnJson = get("random", handleSearch);
   }
 
   function handleSearch(json) {
@@ -30,7 +30,7 @@
     var price = "";
     var desc = "";
     console.log(getUrlVars()["stype"]);
-    products = json[getUrlVars()["stype"]];
+    products = json[getUrlVars()["products"]];
     console.log(products);
     for (i = 0; i < 15; i++){
       imag = "resultsimg" + i;

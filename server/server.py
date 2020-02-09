@@ -90,13 +90,13 @@ def get_stats():
     return render_template('404.html')
 
 
-@app.route('/random', methods=["POST","GET"])
+@app.route('/random', methods=["GET"])
 def random():
     cocktail = get_random()
 
-    ingredientPrices = ingred.ingredientPrices(cocktail)
+    #ingredientPrices = ingred.ingredientPrices(cocktail)
 
-    return jsonify(ingredientPrices)
+    return jsonify(cocktail)
 
 
 @app.route("/text", methods=["POST", "GET"])
