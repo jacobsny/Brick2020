@@ -30,11 +30,3 @@ def getItemsByKeyword(keyword):
     data = json.loads(json_str.text)
 
     return data
-
-
-
-
-
-print(getAvgPriceBySku(484208))
-print(getItemsByKeyword("Belle Meade Bourbon XO"))
-
