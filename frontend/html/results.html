@@ -29,18 +29,34 @@
     var name = "";
     var price = "";
     var desc = "";
-    console.log(getUrlVars()["stype"]);
-    products = json[getUrlVars()["stype"]];
-    console.log(products);
-    for (i = 0; i < 15; i++){
-      imag = "resultsimg" + i;
-      name = "resultsname" + i;
-      price = "resultsprice" + i;
-      desc = "resultsdesc" + i;
-      document.getElementById(imag).src = products[i]["Image_bottle_standard"];
-      document.getElementById(name).innerHTML = products[i]["DigitalCatalogProductName"];
-      document.getElementById(price).innerHTML = products[i]["price"];
-      document.getElementById(desc).innerHTML = products[i]["ProductDescShort"];
+    stype = getUrlVars()["stype"];
+    if(stype === "products") {
+      products = json['products'];
+      console.log(products);
+      for (i = 0; i < 15; i++) {
+        imag = "resultsimg" + i;
+        name = "resultsname" + i;
+        price = "resultsprice" + i;
+        desc = "resultsdesc" + i;
+        document.getElementById(imag).src = products[i]["Image_bottle_standard"];
+        document.getElementById(name).innerHTML = products[i]["DigitalCatalogProductName"];
+        document.getElementById(price).innerHTML = products[i]["price"];
+        document.getElementById(desc).innerHTML = products[i]["ProductDescShort"];
+      }
+    }
+    else{
+      cocktails = json['cocktails'];
+       html = "";
+      for(var cocktail in cocktails){
+        div = "<div class=\"row\"><a href=\"/cocktail?name=" + cocktail["name"];
+        for(i=1; i <= 15; i++){
+          div += "?i" + i + "=" +  cocktail["Ingredient" + i];
+        }
+        div +="\"></div>";
+        html += div;
+      }
+
+      document.getElementsByClassName("columncontainer")[0].innerHTML = html;
     }
   }
 
