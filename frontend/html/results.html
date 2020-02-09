@@ -29,7 +29,7 @@
     var name = "";
     var price = "";
     var desc = "";
-    products = json['products'];
+    products = json[getUrlVars()["search_type"]];
     console.log(products);
     for (i = 0; i < 15; i++){
       imag = "resultsimg" + i;
