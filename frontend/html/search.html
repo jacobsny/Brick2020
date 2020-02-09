@@ -17,9 +17,14 @@
     location.href = url;
   }
   </script>
+  <script>
+  $(document).ready(function(){
+    $("body").fadeIn(3000);
+  });
+  </script>
 </head>
 
-<body>
+<body onload="onLoad()" id="body">
   <div class="searchpage">
     <p>Search Drinks By Name</p>
     <p style="font-size: 30px; top: 37%;">Name of drink?</p>

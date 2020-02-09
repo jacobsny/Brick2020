@@ -26,9 +26,14 @@
     return vars;
   }
   </script>
+  <script>
+  $(document).ready(function(){
+    $("body").fadeIn(3000);
+  });
+  </script>
 </head>
 
-<body onload="onLoad()">
+<body onload="onLoad()" id="body">
   <p class="title">Search Results</p>
   <div class="columncontainer">
     <div class="column">
