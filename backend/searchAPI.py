@@ -14,9 +14,11 @@ def list_cocktails():
     data = db.cocktails.distinct("Name")
     return data
 
+def get_random():
+    return {}
 
 def valid_search(keywords):
-    with open("data/filtered.csv") as types:
+    with open("../data/filtered.csv") as types:
         reader = csv.reader(types)
         for i in range(0,3):
             for type in next(reader):
