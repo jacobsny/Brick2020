@@ -35,6 +35,21 @@ def valid_search(keywords):
     # Is search valid in constellations and cocktailDB?
     # returns a boolean if valid
 
+def get_cocktail(name):
+    cursor = db.cocktails.find({"Name": name})
+    for cocktail in cursor:
+        del cocktail["_id"]
+        ingredients = []
+        new = {}
+        for key in cocktail:
+            if "ingredient" in key.lower():
+                if "(None, None)" not in cocktail[key]:
+                    ingredients.append(cocktail[key])
+            elif "Name" == key or "Directions" == key:
+                new[key] = cocktail[key]
+        new["Ingredients"] = ingredients
+        return new
+
 
 def search_results(keywords):
     products = db.products.find({})
@@ -107,9 +122,11 @@ def get_stats_cocktails(name):
 
 
 if __name__ == '__main__':
-    print(valid_search("Corona"))
-    print(stats_product("Modelo Especial Mexican Lager Beer, 6 pk 12 fl oz Cans, 4.4% ABV"))
-    print(get_stats_product("Modelo Especial Mexican Lager Beer, 6 pk 12 fl oz Cans, 4.4% ABV"))
+    # print(valid_search("Corona"))
+    # print(stats_product("Modelo Especial Mexican Lager Beer, 6 pk 12 fl oz Cans, 4.4% ABV"))
+    # print(get_stats_product("Modelo Especial Mexican Lager Beer, 6 pk 12 fl oz Cans, 4.4% ABV"))
     # print(search_all())
-    print(get_random())
+    # print(get_random())
+
+    print(get_cocktail("After sex"))
 
