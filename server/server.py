@@ -42,6 +42,7 @@ def searching():
     if request.method == 'POST':
         keywords = request.form["keywords"]
         if valid_search(keywords):
+            print("valid")
             # TODO choose search results return type
             return search_results(keywords)
         else:
