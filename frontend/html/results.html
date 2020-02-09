@@ -9,6 +9,17 @@
   <script>
 	function onLoad(){
     	console.log("Page created on Feb 8, 2020");
+      var serv = getUrlVars()["serv"];
+      var squery = getUrlVars()["squery"];
+      var returnJson = post("searching", {"keywords": squery}, true);
+  }
+
+  function getUrlVars() {
+    var vars = {};
+    var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
+        vars[key] = value;
+    });
+    return vars;
   }
   </script>
 </head>
