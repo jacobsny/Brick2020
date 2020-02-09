@@ -90,7 +90,7 @@ def get_stats():
     return render_template('404.html')
 
 
-@app.route('/random')
+@app.route('/random', methods=["POST","GET"])
 def random():
     cocktail = get_random()
 
