@@ -11,13 +11,16 @@
 	function onLoad(){
     	console.log("Page created on Feb 8, 2020");
       var name = getUrlVars()["name"];
+      name.replace(/%20/g, " ");
       var direction = getUrlVars()["d"];
       document.getElementById("resultsname").innerHTML = name;
       for (i = 0; i < 15; i++){
         var ingredient = getUrlVars()["i" + (i+1)];
-        document.getElementById("resultsingr" + i).innerHTML = ingredient
-        ingredient_list += ingredient
+        ingredient.replace(/%20/g, " ");
+        document.getElementById("resultsingr" + i).innerHTML = ingredient;
+        ingredient_list += ingredient;
       }
+      direction.replace(/%20/g, " ");
       document.getElementById("resultsins").innerHTML = direction;
   }
 
