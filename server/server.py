@@ -19,9 +19,8 @@ def login():
     error = None
     if request.method == 'POST':
         keywords = request.form["keywords"]
-        servings = request.form["servings"]
         if valid_search(keywords):
-            return search_results(keywords,servings)
+            return search_results(keywords)
         else:
             error = 'Invalid search'
     # the code below is executed if the request method

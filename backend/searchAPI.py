@@ -30,8 +30,8 @@ def valid_search(keywords):
     # returns a boolean if valid
 
 
-def search_results(keywords, servings):
-    print(keywords,servings)
+def search_results(keywords):
+    print(keywords)
 
 
 if __name__ == '__main__':
