@@ -1,4 +1,5 @@
 from flask import Flask, request, render_template
+from pymongo import MongoClient
 import json
 import threading
 import time
@@ -7,6 +8,7 @@ from backend.searchAPI import valid_search, search_results
 
 app = Flask(__name__)
 
+client = MongoClient(port=27017)
 
 @app.route("/")
 def visual():
@@ -27,7 +29,6 @@ def login():
     # the code below is executed if the request method
     # was GET or the credentials were invalid
     return render_template('search.html', error=error)
-
 
 
 if __name__ == '__main__':
