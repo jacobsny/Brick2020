@@ -41,6 +41,11 @@ def serve_search():
     return render_template("search.html")
 
 
+@app.route("/drunkyresult")
+def server_rand_result():
+    return render_template("drunkyresult.html")
+
+
 @app.route('/searching', methods=['POST', 'GET'])
 def searching():
     error = None
@@ -112,7 +117,7 @@ def texting():
     return render_template('404.html')
 
 
-@app.route("/catalog")
+@app.route("/catelog")
 def catelog():
     return jsonify(search_all())
 
