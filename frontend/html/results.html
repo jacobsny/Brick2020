@@ -15,6 +15,11 @@
   }
 
   function handleSearch(json) {
+    if ("invalid" in json){
+      document.getElementById("resultsname1").innerHTML = "Invalid Search: Could not find " + json['invalid'];
+      document.getElementByClassName("column").style = "border-style: none;"
+      return;
+    }
     console.log(json);
     var imag = "";
     var name = "";
@@ -59,7 +64,7 @@
         <p id="resultsdesc0" class="desc"></p>
       </div>
     </div>
-    <div class="column1">
+    <div class="column">
       <div class="box">
         <img id="resultsimg1" class="image" src="">
         <p id="resultsname1" class="name"></p>
@@ -67,7 +72,7 @@
         <p id="resultsdesc1" class="desc"></p>
       </div>
     </div>
-    <div class="column2">
+    <div class="column">
       <div class="box">
         <img id="resultsimg2" class="image" src="">
         <p id="resultsname2" class="name"></p>
@@ -75,7 +80,7 @@
         <p id="resultsdesc2" class="desc"></p>
       </div>
     </div>
-    <div class="column3">
+    <div class="column">
       <div class="box">
         <img id="resultsimg3" class="image" src="">
         <p id="resultsname3" class="name"></p>
@@ -83,7 +88,7 @@
         <p id="resultsdesc3" class="desc"></p>
       </div>
     </div>
-    <div class="column4">
+    <div class="column">
       <div class="box">
         <img id="resultsimg4" class="image" src="">
         <p id="resultsname4" class="name"></p>
@@ -91,7 +96,7 @@
         <p id="resultsdesc4" class="desc"></p>
       </div>
     </div>
-    <div class="column5">
+    <div class="column">
       <div class="box">
         <img id="resultsimg5" class="image" src="">
         <p id="resultsname5" class="name"></p>
@@ -99,7 +104,7 @@
         <p id="resultsdesc5" class="desc"></p>
       </div>
     </div>
-    <div class="column6">
+    <div class="column">
       <div class="box">
         <img id="resultsimg6" class="image" src="">
         <p id="resultsname6" class="name"></p>
@@ -107,7 +112,7 @@
         <p id="resultsdesc6" class="desc"></p>
       </div>
     </div>
-    <div class="column7">
+    <div class="column">
       <div class="box">
         <img id="resultsimg7" class="image" src="">
         <p id="resultsname7" class="name"></p>
@@ -115,7 +120,7 @@
         <p id="resultsdesc7" class="desc"></p>
       </div>
     </div>
-    <div class="column8">
+    <div class="column">
       <div class="box">
         <img id="resultsimg8" class="image" src="">
         <p id="resultsname8" class="name"></p>
@@ -123,7 +128,7 @@
         <p id="resultsdesc8" class="desc"></p>
       </div>
     </div>
-    <div class="column9">
+    <div class="column">
       <div class="box">
         <img id="resultsimg9" class="image" src="">
         <p id="resultsname9" class="name"></p>
@@ -131,7 +136,7 @@
         <p id="resultsdesc9" class="desc"></p>
       </div>
     </div>
-    <div class="column10">
+    <div class="column">
       <div class="box">
         <img id="resultsimg10" class="image" src="">
         <p id="resultsname10" class="name"></p>
@@ -139,7 +144,7 @@
         <p id="resultsdesc10" class="desc"></p>
       </div>
     </div>
-    <div class="column11">
+    <div class="column">
       <div class="box">
         <img id="resultsimg11" class="image" src="">
         <p id="resultsname11" class="name"></p>
@@ -147,7 +152,7 @@
         <p id="resultsdesc11" class="desc"></p>
       </div>
     </div>
-    <div class="column12">
+    <div class="column">
       <div class="box">
         <img id="resultsimg12" class="image" src="">
         <p id="resultsname12" class="name"></p>
@@ -155,7 +160,7 @@
         <p id="resultsdesc12" class="desc"></p>
       </div>
     </div>
-    <div class="column13">
+    <div class="column">
       <div class="box">
         <img id="resultsimg13" class="image" src="">
         <p id="resultsname13" class="name"></p>
@@ -163,7 +168,7 @@
         <p id="resultsdesc13" class="desc"></p>
       </div>
     </div>
-    <div class="column14">
+    <div class="column">
       <div class="box">
         <img id="resultsimg14" class="image" src="">
         <p id="resultsname14" class="name"></p>
@@ -174,3 +179,4 @@
   </div>
 </body>
 </html>
+

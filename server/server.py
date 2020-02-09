@@ -54,7 +54,7 @@ def searching():
             # print(result)
             return jsonify(result)
         else:
-            return 'Invalid search'
+            return jsonify({"invalid": keywords})
     # the code below is executed if the request method
     # was GET or the credentials were invalid
     return render_template('404.html')
