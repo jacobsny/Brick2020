@@ -72,10 +72,12 @@ def stats_cocktails(name):
 
 def get_stats_product(name):
     cursor = db.stats_product.find({"Name": name})
+    # TODO return the info from the cursor in the format you need
 
 
 def get_stats_cocktails(name):
     cursor = db.stats_cocktails.find({"Name": name})
+    # TODO return the info from the cursor in the format you need
 
 
 if __name__ == '__main__':
