@@ -9,7 +9,6 @@
 	function onLoad(){
     	console.log("Page created on Feb 8, 2020");
   }
-  
   </script>
   <script>
   $(document).ready(function(){
@@ -19,29 +18,18 @@
 </head>
 
 <body onload="onLoad()" id="body" style="display: none;">
-  <div class="searchpage">
-    <p>Search Drinks/Cocktails By Name</p>
-    <p style="font-size: 30px; top: 33%;">Name of drink/cocktail?</p>
-    <input type="text" id="searchquery" name="searchbox" value="">
-    <p style="font-size: 30px; top: 48%;">How many servings?</p>
-    <select id="searchselect" style="top: 49%">
-      <option value="1" selected>1</option>
-      <option value="2">2</option>
-      <option value="3">3</option>
-      <option value="4">4</option>
-      <option value="5">5</option>
-      <option value="6">6</option>
-      <option value="7">7</option>
-      <option value="8">8</option>
-      <option value="9">9</option>
-      <option value="10">10</option>
-    </select>
-    <p style="font-size: 30px; top: 60%;">Drink or cocktail?</p>
-    <select id="searchchoice">
-      <option value="products" selected>Drink</option>
-      <option value="cocktails">Cocktail</option>
-    </select>
-    <button onclick="submitsearch()">Search</button>
+  <div class="cocktailpage">
+    <div class="column">
+      <div class="box">
+        <p id="resultsname" class="name"></p>
+        <p id="resultsingr" class="desc"></p>
+        <p id="resultsins" class="desc"></p>
+        <br>
+        <p class="desc">Want this recipe? Please enter your phone number below.</p>
+        <input type="text" id="searchquery" name="searchbox" value="">
+        <button onclick="sendtext()">Send Text</button>
+      </div>
+    </div>
   </div>
 </body>
 </html>
