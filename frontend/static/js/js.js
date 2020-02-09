@@ -18,6 +18,7 @@ function post(endpt, args, takesArgs, callback) {
     if (http.readyState === 4 && http.status === 200) {
       var json = JSON.parse(http.responseText);
       callback(json)
+      return;
     }
 
   }
