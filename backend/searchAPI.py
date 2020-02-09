@@ -14,8 +14,8 @@ def list_cocktails():
     return data
 
 def get_random():
-    list = db.weggies.distinct("varietal")
-    type = list[random.randint(0,len(list))]
+    boozes = ["Vodka", "Brandy", "Whiskey", "Bourbon", "Tequila", "Brandy", "Rum", "Modelo", "Wine", "Lager", "Beer"]
+    type = boozes[random.randint(0, len(boozes))]
     return search_results(type)
 
 
@@ -102,6 +102,6 @@ if __name__ == '__main__':
     print(valid_search("Corona"))
     print(stats_product("Modelo Especial Mexican Lager Beer, 6 pk 12 fl oz Cans, 4.4% ABV"))
     print(get_stats_product("Modelo Especial Mexican Lager Beer, 6 pk 12 fl oz Cans, 4.4% ABV"))
-
+    # print(search_all())
     print(get_random())
 
