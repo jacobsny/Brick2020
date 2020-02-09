@@ -1,0 +1,16 @@
+.column {
+  float: left;
+  width: 33.33%;
+}
+
+.columnrow:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.column p {
+  font-family: Futura,"Trebuchet MS",Arial,sans-serif;
+  font-size: 25px;
+  text-align: center;
+}
