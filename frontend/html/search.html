@@ -13,7 +13,7 @@
   function submitsearch(){
     var url = window.location.pathname;
     url = url.replace("search", "results");
-    url += "?squery=" + document.getElementById("searchquery").value + "&serv=" + document.getElementById("searchselect").value;
+    url += "?squery=" + document.getElementById("searchquery").value + "&serv=" + document.getElementById("searchselect").value + "&stype=" + document.getElementById("searchchoice").value;
     location.href = url;
   }
   </script>
@@ -26,10 +26,10 @@
 
 <body onload="onLoad()" id="body" style="display: none;">
   <div class="searchpage">
-    <p>Search Drinks By Name</p>
-    <p style="font-size: 30px; top: 37%;">Name of drink?</p>
+    <p>Search Drinks/Cocktails By Name</p>
+    <p style="font-size: 30px; top: 32%;">Name of drink/cocktail?</p>
     <input type="text" id="searchquery" name="searchbox" value="">
-    <p style="font-size: 30px; top: 55%;">How many servings?</p>
+    <p style="font-size: 30px; top: 50%;">How many servings?</p>
     <select id="searchselect">
       <option value="1" selected>1</option>
       <option value="2">2</option>
@@ -41,6 +41,11 @@
       <option value="8">8</option>
       <option value="9">9</option>
       <option value="10">10</option>
+    </select>
+    <p style="font-size: 30px; top: 68%;">Drink or cocktail?</p>
+    <select id="searchchoice">
+      <option value="drink" selected>Drink</option>
+      <option value="cocktail">Cocktail</option>
     </select>
     <button onclick="submitsearch()">Search</button>
   </div>
