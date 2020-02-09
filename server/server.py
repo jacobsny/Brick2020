@@ -4,9 +4,10 @@ import json
 import threading
 import time
 
-from backend.searchAPI import valid_search, search_results, stats_product, stats_cocktails
+from backend.searchAPI import valid_search, search_results, stats_product, stats_cocktails, get_stats_product, \
+    get_stats_cocktails
 
-app = Flask(__name__, template_folder="../frontend/html", static_folder="../frontend/css")
+app = Flask(__name__, template_folder="../frontend/html", static_folder="../frontend/static")
 
 @app.route("/")
 def visual():
@@ -30,7 +31,7 @@ def searching():
 
 
 @app.route('/send_stats', methods=['POST', 'GET'])
-def stats():
+def send_stats():
     error = None
     if request.method == 'POST':
         type = request.form["type"] # true is product
@@ -43,8 +44,9 @@ def stats():
     # was GET or the credentials were invalid
     return render_template('404.html')
 
+
 @app.route('/get_stats', methods=['POST', 'GET'])
-def stats():
+def get_stats():
     error = None
     if request.method == 'POST':
         type = request.form["type"] # true is product
