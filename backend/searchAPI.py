@@ -25,7 +25,7 @@ def get_random():
 
 
 def valid_search(keywords):
-    with open("../data/filtered.csv") as types:
+    with open("data/filtered.csv") as types:
         reader = csv.reader(types)
         for i in range(0,3):
             for type in next(reader):
