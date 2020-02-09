@@ -13,7 +13,6 @@
       var squery = getUrlVars()["squery"];
       console.log(squery);
       var returnJson = post("searching", {"keywords": squery}, true);
-      returnJson = JSON.parse(returnJson);
       console.log(returnJson);
   }
 
