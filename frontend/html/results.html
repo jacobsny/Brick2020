@@ -16,7 +16,7 @@
 
   function handleSearch(json) {
     if ("invalid" in json){
-      document.getElementById("resultsname1").innerHTML = json['invalid'];
+      document.getElementById("resultsname1").innerHTML = "Invalid Search: Could not find " + json['invalid'];
       return;
     }
     console.log(json);
