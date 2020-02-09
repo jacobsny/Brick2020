@@ -112,7 +112,7 @@ def texting():
     return render_template('404.html')
 
 
-@app.route("/catelog")
+@app.route("/catalog")
 def catelog():
     return jsonify(search_all())
 

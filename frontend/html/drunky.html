@@ -9,30 +9,29 @@
   <script>
 	function onLoad(){
     	console.log("Page created on Feb 8, 2020");
+        post("random",[],false,getDrunky)
   }
-  </script>
-  <script>
+
   $(document).ready(function(){
     $("#body").fadeIn(3000);
   });
+  //
+  // function ajaxGetRequest(path, callback){
+  //   let request = new XMLHttpRequest();
+  //   request.onreadystatechange = function(){
+  //       if (this.readyState===4&&this.status ===200){
+  //           callback(this.response);
+  //       }
+  //   };
+  //   request.open("GET", path);
+  //   request.send();
+  // }
 
-  function ajaxGetRequest(path, callback){
-    let request = new XMLHttpRequest();
-    request.onreadystatechange = function(){
-        if (this.readyState===4&&this.status ===200){
-            callback(this.response);
-        }
-    };
-    request.open("GET", path);
-    request.send();
-  }
 
 
+  function getDrunky(json) {
 
-  function getDrunky() {
-    ajaxGetRequest("/drunky", console.log);
-
-    console.log("hello")
+    console.log(json);
 
   }
 
