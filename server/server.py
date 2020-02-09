@@ -45,6 +45,10 @@ def serve_search():
 def server_rand_result():
     return render_template("drunkyresult.html")
 
+@app.route("/cocktail")
+def cocktail_template():
+    return render_template("cocktail.html")
+
 
 @app.route('/searching', methods=['POST', 'GET'])
 def searching():
