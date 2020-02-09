@@ -15,12 +15,33 @@
   $(document).ready(function(){
     $("#body").fadeIn(3000);
   });
+
+  function ajaxGetRequest(path, callback){
+    let request = new XMLHttpRequest();
+    request.onreadystatechange = function(){
+        if (this.readyState===4&&this.status ===200){
+            callback(this.response);
+        }
+    };
+    request.open("GET", path);
+    request.send();
+  }
+
+
+
+  function getDrunky() {
+    ajaxGetRequest("/drunky", print);
+
+    console.log("hello")
+
+  }
+
   </script>
 </head>
 
 <body onload="onLoad()" id="body" style="display: none;">
   <div class="drunkypage">
-    <button>I'm Feeling Drunky!</button>
+    <button onclick="getDrunky();">I'm Feeling Drunky!</button>
   </div>
 </body>
 </html>

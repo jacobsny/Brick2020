@@ -95,8 +95,6 @@ def random():
 
     ingredientPrices = ingred.ingredientPrices(cocktail)
 
-
-
     return jsonify(ingredientPrices)
 
 
