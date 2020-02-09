@@ -16,6 +16,6 @@ function post(endpt, args, takesArgs) {
   }
 
   http.onreadystatechange = (e) => {
-    return http.response;
+    return http.responseText;
   }
 }

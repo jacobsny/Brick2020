@@ -1,4 +1,4 @@
-from flask import Flask, request, render_template
+from flask import Flask, request, render_template, jsonify
 from pymongo import MongoClient
 import json
 import threading
@@ -47,7 +47,7 @@ def searching():
             # TODO choose search results return type
             result = search_results(keywords)
             print(result)
-            return result
+            return jsonify(result)
         else:
             error = 'Invalid search'
     # the code below is executed if the request method
