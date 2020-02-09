@@ -48,7 +48,7 @@
       name = "resultsname" + i;
       price = "resultsprice" + i;
       desc = "resultsdesc" + i;
-      document.getElementsByClassName("columncontainer")[0].innerHTML += "<div class=\"column\">\n" +
+      document.getElementsByClassName("columncontainer")[0].innerHTML = document.getElementsByClassName("columncontainer")[0].innerHTML + "<div class=\"column\">\n" +
               "      <div class=\"box\">\n" +
               "        <img id=\"resultsimg" + i + "\" class=\"image\" src=\"\">\n" +
               "        <p id=\"resultsname" + i +"\" class=\"name\"></p>\n" +
