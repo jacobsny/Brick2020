@@ -17,6 +17,7 @@
   function handleSearch(json) {
     if ("invalid" in json){
       document.getElementById("resultsname1").innerHTML = json['invalid'];
+      return;
     }
     console.log(json);
     var imag = "";
