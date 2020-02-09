@@ -15,7 +15,7 @@ def list_cocktails():
 
 def get_random():
 
-    with open("../data/cocktails.csv") as f:
+    with open("data/cocktails.csv") as f:
         next(f)
 
         for num, f in enumerate(f, 2):
