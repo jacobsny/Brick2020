@@ -17,6 +17,7 @@ function post(endpt, args, takesArgs) {
   http.onreadystatechange = function() {
     if (http.readyState === 4 && http.status === 200) {
       var json = JSON.parse(http.responseText);
+      console.log(json);
       return json;
     }
   }
