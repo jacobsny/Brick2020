@@ -49,8 +49,8 @@
               "      <div class=\"box\">\n" +
               "        <img id=\"resultsimg" + i.toString() + "\" class=\"image\" src=\"\">\n" +
               "        <p id=\"resultsname" + i.toString() +"\" class=\"name\"></p>\n" +
-              "        <p id=\"resultsprice0" + i.toString() +"\" class=\"desc\"></p>\n" +
-              "        <p id=\"resultsdesc0" + i.toString() + "\" class=\"desc\"></p>\n" +
+              "        <p id=\"resultsprice" + i.toString() +"\" class=\"desc\"></p>\n" +
+              "        <p id=\"resultsdesc" + i.toString() + "\" class=\"desc\"></p>\n" +
               "      </div>\n" +
               "    </div>"
     }
@@ -69,6 +69,7 @@
       }
       document.getElementById(name).innerHTML = products[i]["DigitalCatalogProductName"];
       // document.getElementById(price).innerHTML = products[i]["price"];
+
       document.getElementById(desc).innerHTML = products[i]["ProductDescShort"];
     }
   }
