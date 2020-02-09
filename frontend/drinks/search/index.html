@@ -1,12 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<script src="jquery-3.4.1.min.js"></script>
 <title>skszeto</title>
 <link rel="stylesheet" type="text/css" href="css.css">
 <link rel="shortcut icon" type="image/x-icon" href="https://i.imgur.com/tjrh8CL.png"/>
   <script>
 	function onLoad(){
     	console.log("Page created on Feb 8, 2020");
+  }
+
+  function submitsearch(){
+    var sQuery = [document.getElementById("searchquery"), document.getElementById("searchselect").value];
   }
   </script>
 </head>
@@ -15,9 +20,9 @@
   <div class="searchpage">
     <p>Search Drinks By Name</p>
     <p style="font-size: 30px; top: 37%;">Name of drink?</p>
-    <input type="text" id="searchquery" name="searchbox">
+    <input type="text" id="searchquery" name="searchbox" value="">
     <p style="font-size: 30px; top: 55%;">How many servings?</p>
-    <select>
+    <select id="searchselect">
       <option value="1" selected>1</option>
       <option value="2">2</option>
       <option value="3">3</option>
@@ -29,7 +34,7 @@
       <option value="9">9</option>
       <option value="10">10</option>
     </select>
-    <button>Search</button>
+    <button onclick="submitsearch()">Search</button>
   </div>
 </body>
 </html>
