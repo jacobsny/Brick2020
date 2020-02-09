@@ -15,7 +15,7 @@ def visual():
 
 
 @app.route('/search', methods=['POST', 'GET'])
-def login():
+def searching():
     error = None
     if request.method == 'POST':
         keywords = request.form["keywords"]
@@ -25,7 +25,7 @@ def login():
             error = 'Invalid search'
     # the code below is executed if the request method
     # was GET or the credentials were invalid
-    return render_template('search.html', error=error)
+    return render_template('404.html')
 
 
 if __name__ == '__main__':

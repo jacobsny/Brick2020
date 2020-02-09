@@ -31,8 +31,31 @@ def valid_search(keywords):
 
 
 def search_results(keywords):
-    print(keywords)
+    products = db.products.find({})
+    productsFound = []
+    cocktails = db.cocktails.find({})
+    cocktailsFound = []
+    keyList = keywords.lower().split(" ")
+    if "and" in keyList:
+        keyList.remove("and")
+    if "the" in keyList:
+        keyList.remove("the")
+    for product in products:
+        for keyword in keyList:
+            if keyword in product["Varietal"].lower():
+                productsFound.append(product)
+                break
+            if keyword in product["DigitalCatalogProductName"].lower().split():
+                productsFound.append(product)
+                break
+    for cocktail in cocktails:
+        for keyword in keyList:
+            if keyword in cocktail["Name"].lower() or keyword in cocktail["Ingredient1"].lower():
+                cocktailsFound.append(cocktail)
+                break
+    print(productsFound)
+    print(cocktailsFound)
 
 
 if __name__ == '__main__':
-    print(valid_search("gin and tonic"))
+    print(search_results("bourbon"))
