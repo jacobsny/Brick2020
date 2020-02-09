@@ -125,6 +125,14 @@ body {
   text-align: left;
 }
 
+.row {
+  font-family: Futura,"Trebuchet MS",Arial,sans-serif;
+  font-size: 15px;
+  padding-left: 15px;
+  padding-right: 15px;
+  text-align: left;
+}
+
 @media screen and (max-width: 500px) {
   .column {
     width: 100%;
