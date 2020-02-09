@@ -28,9 +28,7 @@ def valid_search(keywords):
     list = db.weggies.distinct("varietal") + db.products.distinct("Brand")
     for i in range(0,len(list)):
         list[i] = list[i].lower()
-    print(list)
     for keyword in keywords.lower().split():
-        print(keyword)
         for typeWord in list:
             if keyword in typeWord:
                 return True
