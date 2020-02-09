@@ -6,7 +6,7 @@ import time
 
 from backend.searchAPI import valid_search, search_results
 
-app = Flask(__name__, template_folder="../frontend")
+app = Flask(__name__, template_folder="../frontend/html", static_folder="../frontend/css")
 
 @app.route("/")
 def visual():
