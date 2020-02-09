@@ -29,21 +29,21 @@
     var desc = "";
     products = json["products"];
     console.log(products);
-    for (i = 0; i < 15; i++){
-      imag = "resultsimg" + i;
-      name = "resultsname" + i;
-      price = "resultsprice" + i;
-      desc = "resultsdesc" + i;
-      if (products[i]["Image_bottle_standard"] == ""){
-        document.getElementById(imag).src = "https://i.imgur.com/AGYUXCq.jpg";
-      } else {
-        document.getElementById(imag).src = products[i]["Image_bottle_standard"];
-      }
-      document.getElementById(name).innerHTML = products[i]["DigitalCatalogProductName"];
-      document.getElementById(price).innerHTML = products[i]["price"];
-      document.getElementById(desc).innerHTML = products[i]["ProductDescShort"];
-    }
-    for (i= 15; i < 40; i++){
+    // for (i = 0; i < 15; i++){
+    //   imag = "resultsimg" + i;
+    //   name = "resultsname" + i;
+    //   price = "resultsprice" + i;
+    //   desc = "resultsdesc" + i;
+    //   if (products[i]["Image_bottle_standard"] == ""){
+    //     document.getElementById(imag).src = "https://i.imgur.com/AGYUXCq.jpg";
+    //   } else {
+    //     document.getElementById(imag).src = products[i]["Image_bottle_standard"];
+    //   }
+    //   document.getElementById(name).innerHTML = products[i]["DigitalCatalogProductName"];
+    //   document.getElementById(price).innerHTML = products[i]["price"];
+    //   document.getElementById(desc).innerHTML = products[i]["ProductDescShort"];
+    // }
+    for (i= 0; i < 40; i++){
       imag = "resultsimg" + i;
       name = "resultsname" + i;
       price = "resultsprice" + i;
@@ -56,7 +56,11 @@
               "        <p id=\"resultsdesc0" + i + "\" class=\"desc\"></p>\n" +
               "      </div>\n" +
               "    </div>"
-      document.getElementById(imag).src = products[i]["Image_bottle_standard"];
+      if (products[i]["Image_bottle_standard"] == ""){
+        document.getElementById(imag).src = "https://i.imgur.com/AGYUXCq.jpg";
+      } else {
+        document.getElementById(imag).src = products[i]["Image_bottle_standard"];
+      }
       document.getElementById(name).innerHTML = products[i]["DigitalCatalogProductName"];
       document.getElementById(price).innerHTML = products[i]["price"];
       document.getElementById(desc).innerHTML = products[i]["ProductDescShort"];
@@ -72,126 +76,126 @@
 <body onload="onLoad()" id="body" style="display: none;">
   <p class="title">Search Results</p>
   <div class="columncontainer">
-    <div class="column">
-      <div class="box">
-        <img id="resultsimg0" class="image" src="">
-        <p id="resultsname0" class="name"></p>
-        <p id="resultsprice0" class="desc"></p>
-        <p id="resultsdesc0" class="desc"></p>
-      </div>
-    </div>
-    <div class="column">
-      <div class="box">
-        <img id="resultsimg1" class="image" src="">
-        <p id="resultsname1" class="name"></p>
-        <p id="resultsprice1" class="desc"></p>
-        <p id="resultsdesc1" class="desc"></p>
-      </div>
-    </div>
-    <div class="column">
-      <div class="box">
-        <img id="resultsimg2" class="image" src="">
-        <p id="resultsname2" class="name"></p>
-        <p id="resultsprice2" class="desc"></p>
-        <p id="resultsdesc2" class="desc"></p>
-      </div>
-    </div>
-    <div class="column">
-      <div class="box">
-        <img id="resultsimg3" class="image" src="">
-        <p id="resultsname3" class="name"></p>
-        <p id="resultsprice3" class="desc"></p>
-        <p id="resultsdesc3" class="desc"></p>
-      </div>
-    </div>
-    <div class="column">
-      <div class="box">
-        <img id="resultsimg4" class="image" src="">
-        <p id="resultsname4" class="name"></p>
-        <p id="resultsprice4" class="desc"></p>
-        <p id="resultsdesc4" class="desc"></p>
-      </div>
-    </div>
-    <div class="column">
-      <div class="box">
-        <img id="resultsimg5" class="image" src="">
-        <p id="resultsname5" class="name"></p>
-        <p id="resultsprice5" class="desc"></p>
-        <p id="resultsdesc5" class="desc"></p>
-      </div>
-    </div>
-    <div class="column">
-      <div class="box">
-        <img id="resultsimg6" class="image" src="">
-        <p id="resultsname6" class="name"></p>
-        <p id="resultsprice6" class="desc"></p>
-        <p id="resultsdesc6" class="desc"></p>
-      </div>
-    </div>
-    <div class="column">
-      <div class="box">
-        <img id="resultsimg7" class="image" src="">
-        <p id="resultsname7" class="name"></p>
-        <p id="resultsprice7" class="desc"></p>
-        <p id="resultsdesc7" class="desc"></p>
-      </div>
-    </div>
-    <div class="column">
-      <div class="box">
-        <img id="resultsimg8" class="image" src="">
-        <p id="resultsname8" class="name"></p>
-        <p id="resultsprice8" class="desc"></p>
-        <p id="resultsdesc8" class="desc"></p>
-      </div>
-    </div>
-    <div class="column">
-      <div class="box">
-        <img id="resultsimg9" class="image" src="">
-        <p id="resultsname9" class="name"></p>
-        <p id="resultsprice9" class="desc"></p>
-        <p id="resultsdesc9" class="desc"></p>
-      </div>
-    </div>
-    <div class="column">
-      <div class="box">
-        <img id="resultsimg10" class="image" src="">
-        <p id="resultsname10" class="name"></p>
-        <p id="resultsprice10" class="desc"></p>
-        <p id="resultsdesc10" class="desc"></p>
-      </div>
-    </div>
-    <div class="column">
-      <div class="box">
-        <img id="resultsimg11" class="image" src="">
-        <p id="resultsname11" class="name"></p>
-        <p id="resultsprice11" class="desc"></p>
-        <p id="resultsdesc11" class="desc"></p>
-      </div>
-    </div>
-    <div class="column">
-      <div class="box">
-        <img id="resultsimg12" class="image" src="">
-        <p id="resultsname12" class="name"></p>
-        <p id="resultsprice12" class="desc"></p>
-        <p id="resultsdesc12" class="desc"></p>
-      </div>
-    </div>
-    <div class="column">
-      <div class="box">
-        <img id="resultsimg13" class="image" src="">
-        <p id="resultsname13" class="name"></p>
-        <p id="resultsprice13" class="desc"></p>
-        <p id="resultsdesc13" class="desc"></p>
-      </div>
-    </div>
-    <div class="column">
-      <div class="box">
-        <img id="resultsimg14" class="image" src="">
-        <p id="resultsname14" class="name"></p>
-        <p id="resultsprice14" class="desc"></p>
-        <p id="resultsdesc14" class="desc"></p>
-      </div>
-    </div>
+<!--    <div class="column">-->
+<!--      <div class="box">-->
+<!--        <img id="resultsimg0" class="image" src="">-->
+<!--        <p id="resultsname0" class="name"></p>-->
+<!--        <p id="resultsprice0" class="desc"></p>-->
+<!--        <p id="resultsdesc0" class="desc"></p>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--    <div class="column">-->
+<!--      <div class="box">-->
+<!--        <img id="resultsimg1" class="image" src="">-->
+<!--        <p id="resultsname1" class="name"></p>-->
+<!--        <p id="resultsprice1" class="desc"></p>-->
+<!--        <p id="resultsdesc1" class="desc"></p>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--    <div class="column">-->
+<!--      <div class="box">-->
+<!--        <img id="resultsimg2" class="image" src="">-->
+<!--        <p id="resultsname2" class="name"></p>-->
+<!--        <p id="resultsprice2" class="desc"></p>-->
+<!--        <p id="resultsdesc2" class="desc"></p>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--    <div class="column">-->
+<!--      <div class="box">-->
+<!--        <img id="resultsimg3" class="image" src="">-->
+<!--        <p id="resultsname3" class="name"></p>-->
+<!--        <p id="resultsprice3" class="desc"></p>-->
+<!--        <p id="resultsdesc3" class="desc"></p>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--    <div class="column">-->
+<!--      <div class="box">-->
+<!--        <img id="resultsimg4" class="image" src="">-->
+<!--        <p id="resultsname4" class="name"></p>-->
+<!--        <p id="resultsprice4" class="desc"></p>-->
+<!--        <p id="resultsdesc4" class="desc"></p>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--    <div class="column">-->
+<!--      <div class="box">-->
+<!--        <img id="resultsimg5" class="image" src="">-->
+<!--        <p id="resultsname5" class="name"></p>-->
+<!--        <p id="resultsprice5" class="desc"></p>-->
+<!--        <p id="resultsdesc5" class="desc"></p>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--    <div class="column">-->
+<!--      <div class="box">-->
+<!--        <img id="resultsimg6" class="image" src="">-->
+<!--        <p id="resultsname6" class="name"></p>-->
+<!--        <p id="resultsprice6" class="desc"></p>-->
+<!--        <p id="resultsdesc6" class="desc"></p>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--    <div class="column">-->
+<!--      <div class="box">-->
+<!--        <img id="resultsimg7" class="image" src="">-->
+<!--        <p id="resultsname7" class="name"></p>-->
+<!--        <p id="resultsprice7" class="desc"></p>-->
+<!--        <p id="resultsdesc7" class="desc"></p>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--    <div class="column">-->
+<!--      <div class="box">-->
+<!--        <img id="resultsimg8" class="image" src="">-->
+<!--        <p id="resultsname8" class="name"></p>-->
+<!--        <p id="resultsprice8" class="desc"></p>-->
+<!--        <p id="resultsdesc8" class="desc"></p>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--    <div class="column">-->
+<!--      <div class="box">-->
+<!--        <img id="resultsimg9" class="image" src="">-->
+<!--        <p id="resultsname9" class="name"></p>-->
+<!--        <p id="resultsprice9" class="desc"></p>-->
+<!--        <p id="resultsdesc9" class="desc"></p>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--    <div class="column">-->
+<!--      <div class="box">-->
+<!--        <img id="resultsimg10" class="image" src="">-->
+<!--        <p id="resultsname10" class="name"></p>-->
+<!--        <p id="resultsprice10" class="desc"></p>-->
+<!--        <p id="resultsdesc10" class="desc"></p>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--    <div class="column">-->
+<!--      <div class="box">-->
+<!--        <img id="resultsimg11" class="image" src="">-->
+<!--        <p id="resultsname11" class="name"></p>-->
+<!--        <p id="resultsprice11" class="desc"></p>-->
+<!--        <p id="resultsdesc11" class="desc"></p>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--    <div class="column">-->
+<!--      <div class="box">-->
+<!--        <img id="resultsimg12" class="image" src="">-->
+<!--        <p id="resultsname12" class="name"></p>-->
+<!--        <p id="resultsprice12" class="desc"></p>-->
+<!--        <p id="resultsdesc12" class="desc"></p>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--    <div class="column">-->
+<!--      <div class="box">-->
+<!--        <img id="resultsimg13" class="image" src="">-->
+<!--        <p id="resultsname13" class="name"></p>-->
+<!--        <p id="resultsprice13" class="desc"></p>-->
+<!--        <p id="resultsdesc13" class="desc"></p>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--    <div class="column">-->
+<!--      <div class="box">-->
+<!--        <img id="resultsimg14" class="image" src="">-->
+<!--        <p id="resultsname14" class="name"></p>-->
+<!--        <p id="resultsprice14" class="desc"></p>-->
+<!--        <p id="resultsdesc14" class="desc"></p>-->
+<!--      </div>-->
+<!--    </div>-->
   </div>
 </body>
 </html>
