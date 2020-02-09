@@ -20,16 +20,17 @@
     var name = "";
     var price = "";
     var desc = "";
-
+    products = json['products'];
+    console.log(products);
     for (i = 0; i < 15; i++){
       imag = "resultsimg" + i;
       name = "resultsname" + i;
       price = "resultsprice" + i;
       desc = "resultsdesc" + i;
-      document.getElementById(imag).src = json[i]["Image_bottle_standard"];
-      document.getElementById(name).innerHTML = json[i]["DigitalCatalogProductName"];
-      document.getElementById(price).innerHTML = json[i]["price"];
-      document.getElementById(desc).innerHTML = json[i].["ProductDescShort"];
+      document.getElementById(imag).src = products[i]["Image_bottle_standard"];
+      document.getElementById(name).innerHTML = products[i]["DigitalCatalogProductName"];
+      document.getElementById(price).innerHTML = products[i]["price"];
+      document.getElementById(desc).innerHTML = products[i]["ProductDescShort"];
     }
   }
 
