@@ -9,7 +9,6 @@
   <script>
 	function onLoad(){
     	console.log("Page created on Feb 8, 2020");
-        post("random",[],false,getDrunky)
   }
 
   $(document).ready(function(){
@@ -30,9 +29,9 @@
 
 
   function getDrunky(json) {
-
     console.log(json);
-
+    url = url.replace("drunky", "drunkyresult");
+    location.href = url;
   }
 
   </script>

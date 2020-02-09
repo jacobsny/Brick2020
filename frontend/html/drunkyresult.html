@@ -9,8 +9,6 @@
   <script>
 	function onLoad(){
       console.log("Page created on Feb 8, 2020");
-      var serv = getUrlVars()["serv"];
-      var squery = getUrlVars()["squery"];
       var returnJson = get("random", handleSearch);
   }
 
@@ -42,14 +40,6 @@
       document.getElementById(price).innerHTML = products[i]["price"];
       document.getElementById(desc).innerHTML = products[i]["ProductDescShort"];
     }
-  }
-
-  function getUrlVars() {
-    var vars = {};
-    var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
-        vars[key] = value;
-    });
-    return vars;
   }
 
   $(document).ready(function(){
