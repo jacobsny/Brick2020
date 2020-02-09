@@ -8,6 +8,25 @@
   <script>
 	function onLoad(){
     	console.log("Page created on Feb 8, 2020");
+      var name = getUrlVars()["name"];
+      var direction = getUrlVars()["d"];
+      document.getElementById("resultsname").innerHTML = name;
+      for (i = 0; i < 15; i++){
+        document.getElementById("resultsingr" + i).innerHTML = getUrlVars()["i" + (i+1)]];
+      }
+      document.getElementById("resultsins").innerHTML = direction;
+  }
+
+  function getUrlVars() {
+    var vars = {};
+    var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
+        vars[key] = value;
+    });
+    return vars;
+  }
+
+  function sendtext(){
+
   }
   </script>
   <script>
@@ -21,10 +40,23 @@
   <div class="cocktailpage">
     <div class="column">
       <div class="box">
-        <p id="resultsname" class="name"></p>
-        <p id="resultsingr" class="desc"></p>
-        <p id="resultsins" class="desc"></p>
-        <br>
+        <p id="resultsname" class="name"></p><br>
+        <p id="resultsingr0" class="desc"></p>
+        <p id="resultsingr1" class="desc"></p>
+        <p id="resultsingr2" class="desc"></p>
+        <p id="resultsingr3" class="desc"></p>
+        <p id="resultsingr4" class="desc"></p>
+        <p id="resultsingr5" class="desc"></p>
+        <p id="resultsingr6" class="desc"></p>
+        <p id="resultsingr7" class="desc"></p>
+        <p id="resultsingr8" class="desc"></p>
+        <p id="resultsingr9" class="desc"></p>
+        <p id="resultsingr10" class="desc"></p>
+        <p id="resultsingr11" class="desc"></p>
+        <p id="resultsingr12" class="desc"></p>
+        <p id="resultsingr13" class="desc"></p>
+        <p id="resultsingr14" class="desc"></p><br>
+        <p id="resultsins" class="desc"></p><br>
         <p class="desc">Want this recipe? Please enter your phone number below.</p>
         <input type="text" id="searchquery" name="searchbox" value="">
         <button onclick="sendtext()">Send Text</button>
