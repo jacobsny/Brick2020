@@ -128,8 +128,8 @@ body {
 .row {
   font-family: Futura,"Trebuchet MS",Arial,sans-serif;
   font-size: 15px;
-  padding-left: 15px;
-  padding-right: 15px;
+  padding-left: 15em;
+  padding-right: 15em;
   text-align: left;
 }
 
