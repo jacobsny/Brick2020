@@ -5,7 +5,7 @@ import threading
 import time
 
 from backend.searchAPI import valid_search, search_results, stats_product, stats_cocktails, get_stats_product, \
-    get_stats_cocktails
+    get_stats_cocktails, get_random
 
 app = Flask(__name__, template_folder="../frontend/html", static_folder="../frontend/static")
 
@@ -85,5 +85,10 @@ def get_stats():
     return render_template('404.html')
 
 
+@app.route('/random')
+def random():
+    return jsonify(get_random())
+
+
 if __name__ == '__main__':
-    app.run(host="0.0.0.0", port=80, debug=True)
+    app.run(host="0.0.0.0", port=8080, debug=True)

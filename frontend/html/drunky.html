@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<script src="jquery-3.4.1.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <title>skszeto</title>
 <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/css.css') }}">
 <script src="{{ url_for('static',filename='js/js.js') }}"></script>
@@ -11,9 +11,14 @@
     	console.log("Page created on Feb 8, 2020");
   }
   </script>
+  <script>
+  $(document).ready(function(){
+    $("#body").fadeIn(3000);
+  });
+  </script>
 </head>
 
-<body>
+<body onload="onLoad()" id="body" style="display: none;">
   <div class="drunkypage">
     <button>I'm Feeling Drunky!</button>
   </div>
