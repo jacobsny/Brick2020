@@ -15,7 +15,7 @@ def list_cocktails():
 
 def get_random():
     boozes = ["Vodka", "Brandy", "Whiskey", "Bourbon", "Tequila", "Brandy", "Rum", "Modelo", "Wine", "Lager", "Beer"]
-    type = boozes[random.randint(0, len(boozes))]
+    type = boozes[random.randint(0, len(boozes)-1)]
     return search_results(type)
 
 
