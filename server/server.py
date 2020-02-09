@@ -9,7 +9,7 @@ import threading
 import time
 
 from backend.searchAPI import valid_search, search_results, stats_product, stats_cocktails, get_stats_product, \
-    get_stats_cocktails, get_random
+    get_stats_cocktails, get_random, search_all
 from backend.texting import send_ingredients
 
 app = Flask(__name__, template_folder="../frontend/html", static_folder="../frontend/static")
@@ -98,6 +98,7 @@ def random():
 
     return jsonify(ingredientPrices)
 
+
 @app.route("/text", methods=["POST", "GET"])
 def texting():
     error = None
@@ -109,6 +110,11 @@ def texting():
     # the code below is executed if the request method
     # was GET or the credentials were invalid
     return render_template('404.html')
+
+
+@app.route("/catelog")
+def catelog():
+    return jsonify(search_all())
 
 
 if __name__ == '__main__':

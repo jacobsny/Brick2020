@@ -71,6 +71,12 @@ def search_results(keywords):
     # print(cocktailsFound)
 
 
+def search_all():
+    products = db.products.find({})
+    cocktails = db.cocktails.find({})
+    return {"products": products, "cocktails": cocktails}
+
+
 def stats_product(name):
     now = datetime.datetime.now()
     current = now.strftime("%Y-%m-%d %H:%M:%S")
