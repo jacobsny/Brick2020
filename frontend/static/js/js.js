@@ -15,10 +15,10 @@ function post(endpt, args, takesArgs, callback) {
 
   http.onreadystatechange = function() {
     if (http.readyState === 4 && http.status === 200) {
-      console.log(http.responseText);
-      var json = JSON.parse(http.responseText);
-      callback(json)
-      return;
+      var response = http.responseText;
+      console.log(response);
+      var json = JSON.parse(http.response);
+      callback(json);
     }
 
   }
