@@ -52,10 +52,7 @@ def search_results(keywords):
         keyList.remove("the")
     for product in products:
         for keyword in keyList:
-            if keyword in product["Varietal"].lower():
-                productsFound.append(product)
-                break
-            if keyword in product["DigitalCatalogProductName"].lower().split():
+            if keyword in product["Varietal"].lower() or keyword in product["DigitalCatalogProductName"].lower().split():
                 productsFound.append(product)
                 break
     for cocktail in cocktails:
@@ -84,12 +81,17 @@ def stats_cocktails(name):
 def get_stats_product(name):
     cursor = db.stats_product.find({"Name": name})
     # TODO return the info from the cursor in the format you need
+    count = len(list(cursor))
+    return {"Name": name, "Frequency": count}
 
 
 def get_stats_cocktails(name):
     cursor = db.stats_cocktails.find({"Name": name})
     # TODO return the info from the cursor in the format you need
+    count = len(list(cursor))
+    return {"Name": name, "Frequency": count}
 
 
 if __name__ == '__main__':
-    print(search_results("bourbon"))
+    print(stats_product("Modelo Especial Mexican Lager Beer, 6 pk 12 fl oz Cans, 4.4% ABV"))
+    print(get_stats_product("Modelo Especial Mexican Lager Beer, 6 pk 12 fl oz Cans, 4.4% ABV"))
