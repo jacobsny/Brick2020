@@ -61,9 +61,19 @@
         <p id="resultsingr13" class="desc"></p>
         <p id="resultsingr14" class="desc"></p><br>
         <p id="resultsins" class="desc"></p><br>
-        <p class="desc">Want this recipe? Please enter your phone number below.</p>
+        <p class="desc">Want this recipe? Please enter your phone number and provider below.</p>
         <input type="text" id="searchquery" name="searchbox" value="">
         <button onclick="sendtext(ingredient_list,provider,phoneNumber)">Send Text</button>
+        <select id="searchselect">
+          <option value="@vtext.com" selected>Verizon</option>
+          <option value="@message.alltel.com">Alltel</option>
+          <option value="@txt.att.net">AT&T</option>
+          <option value="@tmomail.net">T-Mobile</option>
+          <option value="@vmobl.com">Virgin</option>
+          <option value="@messaging.sprintpcs.com">Sprint</option>
+          <option value="@messaging.nextel.com">Nextel</option>
+          <option value="@mms.uscc.net">UsCell</option>
+        </select>
       </div>
     </div>
   </div>
