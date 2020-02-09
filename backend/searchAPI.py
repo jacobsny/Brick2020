@@ -69,7 +69,15 @@ def search_results(keywords):
 def search_all():
     products = list(db.products.find({}))
     cocktails = list(db.cocktails.find({}))
-    return {"products": [pro for pro in products], "cocktails": [co for co in cocktails]}
+    productFinal = []
+    for pro in products:
+        del pro["_id"]
+        productFinal.append(pro)
+    cocktailFinal = []
+    for cocktail in cocktails:
+        del cocktail["_id"]
+        cocktailFinal.append(cocktail)
+    return {"products": productFinal, "cocktails": cocktailFinal}
 
 
 def stats_product(name):
