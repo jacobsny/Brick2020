@@ -28,7 +28,8 @@ def searching():
     # was GET or the credentials were invalid
     return render_template('404.html')
 
-@app.route('/stats', methods=['POST','GET'])
+
+@app.route('/send_stats', methods=['POST', 'GET'])
 def stats():
     error = None
     if request.method == 'POST':
@@ -38,6 +39,20 @@ def stats():
             stats_product(name)
         else:
             stats_cocktails(name)
+    # the code below is executed if the request method
+    # was GET or the credentials were invalid
+    return render_template('404.html')
+
+@app.route('/get_stats', methods=['POST', 'GET'])
+def stats():
+    error = None
+    if request.method == 'POST':
+        type = request.form["type"] # true is product
+        name = request.form["name"]
+        if(type):
+            get_stats_product(name)
+        else:
+            get_stats_cocktails(name)
     # the code below is executed if the request method
     # was GET or the credentials were invalid
     return render_template('404.html')

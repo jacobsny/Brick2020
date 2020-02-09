@@ -59,17 +59,23 @@ def search_results(keywords):
 
 
 def stats_product(name):
-    # TODO add name into mongoDB if not in yet
     now = datetime.datetime.now()
     current = now.strftime("%Y-%m-%d %H:%M:%S")
     db.stats_product.insert_one({"datetime": current, "Name": name})
 
 
 def stats_cocktails(name):
-    # TODO add name into mongoDB if not in yet
     now = datetime.datetime.now()
     current = now.strftime("%Y-%m-%d %H:%M:%S")
     db.stats_cocktails.insert_one({"datetime": current, "Name": name})
+
+
+def get_stats_product(name):
+    cursor = db.stats_product.find({"Name": name})
+
+
+def get_stats_cocktails(name):
+    cursor = db.stats_cocktails.find({"Name": name})
 
 
 if __name__ == '__main__':
