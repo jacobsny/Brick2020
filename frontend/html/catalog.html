@@ -47,10 +47,10 @@
     for(i = 15; i < 40; i++){
       html += "<div class=\"column\">\n" +
               "      <div class=\"box\">\n" +
-              "        <img id=\"resultsimg" + i + "\" class=\"image\" src=\"\">\n" +
-              "        <p id=\"resultsname" + i +"\" class=\"name\"></p>\n" +
-              "        <p id=\"resultsprice0" + i +"\" class=\"desc\"></p>\n" +
-              "        <p id=\"resultsdesc0" + i + "\" class=\"desc\"></p>\n" +
+              "        <img id=\"resultsimg" + i.toString() + "\" class=\"image\" src=\"\">\n" +
+              "        <p id=\"resultsname" + i.toString() +"\" class=\"name\"></p>\n" +
+              "        <p id=\"resultsprice0" + i.toString() +"\" class=\"desc\"></p>\n" +
+              "        <p id=\"resultsdesc0" + i.toString() + "\" class=\"desc\"></p>\n" +
               "      </div>\n" +
               "    </div>"
     }
@@ -58,10 +58,10 @@
     document.getElementsByClassName("columncontainer")[0].innerHTML += html;
 
     for (i= 15; i < 40; i++){
-      imag = "resultsimg" + i;
-      name = "resultsname" + i;
-      price = "resultsprice" + i;
-      desc = "resultsdesc" + i;
+      imag = "resultsimg" + i.toString();
+      name = "resultsname" + i.toString();
+      price = "resultsprice" + i.toString();
+      desc = "resultsdesc" + i.toString();
       if (products[i]["Image_bottle_standard"] == ""){
         document.getElementById(imag).src = "https://i.imgur.com/AGYUXCq.jpg";
       } else {
