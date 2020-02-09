@@ -35,6 +35,6 @@ def getItemsByKeyword(keyword):
 
 
 
-print(getAvgPriceBySku(484208))
-print(getItemsByKeyword("Belle Meade Bourbon XO"))
+# print(getAvgPriceBySku(484208))
+# print(getItemsByKeyword("Belle Meade Bourbon XO"))
 
