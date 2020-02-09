@@ -1,16 +1,15 @@
 function post(endpt, args, takesArgs) {
   const http = new XMLHttpRequest();
-  const url= endpt;
-  if(takesArgs){
+  const url = endpt;
+  if (takesArgs) {
     const data = new FormData();
-    for(let k in args){
-        data.append(k, args[k]);
+    for (let k in args) {
+      data.append(k, args[k]);
     }
     http.open("POST", url);
     console.log("sending form")
     http.send(data)
-  }
-  else {
+  } else {
     http.open("POST", url);
     http.send();
   }
@@ -20,4 +19,5 @@ function post(endpt, args, takesArgs) {
       var json = JSON.parse(http.responseText);
       return json;
     }
+  }
 }
