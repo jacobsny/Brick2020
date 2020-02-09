@@ -46,14 +46,15 @@
     }
     else{
       cocktails = json['cocktails'];
+      console.log(cocktails);
        html = "";
       for(var cocktail in cocktails){
-        div = "<div class=\"row\"><a href=\"/cocktail?name=" + cocktail["name"];
+        div = "<div class=\"row\"><a href=\"/cocktail?name=" + cocktail["Name"];
         for(i=1; i <= 15; i++){
           div += "?i" + i + "=" +  cocktail["Ingredient" + i];
         }
         div +="\">";
-        div += cocktail["name"] + "</a>" + cocktail["Category"] + "</div>";
+        div += cocktail["Name"] + "</a>" + cocktail["Category"] + "</div>";
         html += div;
       }
 
