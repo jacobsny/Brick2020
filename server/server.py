@@ -6,11 +6,11 @@ import time
 
 from backend.searchAPI import valid_search, search_results
 
-app = Flask(__name__)
+app = Flask(__name__, template_folder="../frontend")
 
 @app.route("/")
 def visual():
-    print("Insert HTML HERE")
+    return render_template("index.html")
     # TODO serve Spence's front end html
 
 
@@ -29,4 +29,4 @@ def searching():
 
 
 if __name__ == '__main__':
-    app.run(host="0.0.0.0", port=8080, debug=True)
+    app.run(host="localhost", port=8080, debug=True)
