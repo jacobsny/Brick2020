@@ -25,9 +25,15 @@ def get_random():
 
 
 def valid_search(keywords):
-    for type in db.weggies.distinct("varietal"):
-        if type.lower() in keywords.lower():
-            return True
+    list = db.weggies.distinct("varietal") + db.products.distinct("Brand")
+    for i in range(0,len(list)):
+        list[i] = list[i].lower()
+    print(list)
+    for keyword in keywords.lower().split():
+        print(keyword)
+        for typeWord in list:
+            if keyword in typeWord:
+                return True
     for cocktail in list_cocktails():
         for word in keywords.split():
             if word.lower() in cocktail.lower() and word.lower() != "and" and word.lower() != "the":
