@@ -30,7 +30,8 @@
 
   function getDrunky(json) {
     console.log(json);
-    var url = url.replace("drunky", "drunkyresult");
+    var url = window.location.pathname;
+    url = url.replace("drunky", "drunkyresult");
     location.href = url;
   }
 
