@@ -6,13 +6,17 @@
 <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/css.css') }}">
 <link rel="shortcut icon" type="image/x-icon" href="https://i.imgur.com/tjrh8CL.png"/>
   <script>
+    var ingredient_list = [];
+
 	function onLoad(){
     	console.log("Page created on Feb 8, 2020");
       var name = getUrlVars()["name"];
       var direction = getUrlVars()["d"];
       document.getElementById("resultsname").innerHTML = name;
       for (i = 0; i < 15; i++){
-        document.getElementById("resultsingr" + i).innerHTML = getUrlVars()["i" + (i+1)]];
+        var ingredient = getUrlVars()["i" + (i+1)];
+        document.getElementById("resultsingr" + i).innerHTML = ingredient
+        ingredient_list += ingredient
       }
       document.getElementById("resultsins").innerHTML = direction;
   }
@@ -25,8 +29,8 @@
     return vars;
   }
 
-  function sendtext(){
-
+  function sendtext(ingrd,p, p_num){
+	  post("text",{"number": p_num, "ingredients": ingrd, "provider": p},true,console.log);
   }
   </script>
   <script>
@@ -59,7 +63,7 @@
         <p id="resultsins" class="desc"></p><br>
         <p class="desc">Want this recipe? Please enter your phone number below.</p>
         <input type="text" id="searchquery" name="searchbox" value="">
-        <button onclick="sendtext()">Send Text</button>
+        <button onclick="sendtext(ingredient_list,provider,phoneNumber)">Send Text</button>
       </div>
     </div>
   </div>
