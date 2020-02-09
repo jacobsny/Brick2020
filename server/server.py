@@ -10,6 +10,7 @@ import time
 
 from backend.searchAPI import valid_search, search_results, stats_product, stats_cocktails, get_stats_product, \
     get_stats_cocktails, get_random
+from backend.texting import send_ingredients
 
 app = Flask(__name__, template_folder="../frontend/html", static_folder="../frontend/static")
 
@@ -96,6 +97,18 @@ def random():
     ingredientPrices = ingred.ingredientPrices(cocktail)
 
     return jsonify(ingredientPrices)
+
+@app.route("/text", methods=["POST", "GET"])
+def texting():
+    error = None
+    if request.method == 'POST':
+        number = request.form["number"]
+        provider = request.form["provider"]
+        ingredients = request.form["ingredients"]
+        send_ingredients(ingredients, provider, number)
+    # the code below is executed if the request method
+    # was GET or the credentials were invalid
+    return render_template('404.html')
 
 
 if __name__ == '__main__':
