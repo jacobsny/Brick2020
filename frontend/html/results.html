@@ -29,6 +29,7 @@
     var name = "";
     var price = "";
     var desc = "";
+    console.log(getUrlVars()["stype"]);
     products = json[getUrlVars()["stype"]];
     console.log(products);
     for (i = 0; i < 15; i++){
