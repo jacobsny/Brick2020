@@ -7,6 +7,7 @@ function post(endpt, args, takesArgs) {
         data.append(k, args[k]);
     }
     http.open("POST", url);
+    console.log("sending form")
     http.send(data)
   }
   else {

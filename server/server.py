@@ -40,6 +40,7 @@ def serve_search():
 def searching():
     error = None
     if request.method == 'POST':
+        print("isPost")
         keywords = request.form["keywords"]
         if valid_search(keywords):
             print("valid")
