@@ -12,7 +12,7 @@
 
   function submitsearch(){
     var url = window.location.pathname;
-    url = url.replace("search.html", "results.html");
+    url = url.replace("search", "results");
     url += "?squery=" + document.getElementById("searchquery").value + "&serv=" + document.getElementById("searchselect").value;
     location.href = url;
   }

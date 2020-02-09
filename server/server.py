@@ -9,13 +9,34 @@ from backend.searchAPI import valid_search, search_results, stats_product, stats
 
 app = Flask(__name__, template_folder="../frontend/html", static_folder="../frontend/static")
 
+
 @app.route("/")
 def visual():
     return render_template("index.html")
     # TODO serve Spence's front end html
 
 
-@app.route('/search', methods=['POST', 'GET'])
+@app.route("/catalog")
+def serve_catalog():
+    return render_template("catalog.html")
+
+
+@app.route("/drunky")
+def serve_drunky():
+    return render_template("drunky.html")
+
+
+@app.route("/results")
+def serve_results():
+    return render_template("results.html")
+
+
+@app.route("/search")
+def serve_search():
+    return render_template("search.html")
+
+
+@app.route('/searching', methods=['POST', 'GET'])
 def searching():
     error = None
     if request.method == 'POST':
